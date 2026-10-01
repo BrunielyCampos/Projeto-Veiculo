@@ -15,12 +15,12 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController 
 @RequestMapping("/veiculos")
@@ -46,7 +46,19 @@ public class VeiculoController {
         return ResponseEntity.created(uri).body(veiculo);
     }
 
-    
+    @PutMapping 
+    public ResponseEntity<VeiculoResponseDTO> atualizarVeiculo(@PathVariable Long id, @Valid @RequestBody VeiculoResponseDTO dto){
+        VeiculoResponseDTO veiculo = service.atualizar(id, dto);
+
+        return ResponseEntity.ok(veiculo);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deletar(@PathVariable Long id){
+        service.deletar(id);
+
+        return ResponseEntity.noContent().build();
+    }
     
 
     

@@ -12,9 +12,11 @@ import com.prova.veiculo.exception.VeiculoNaoEncontradoException;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 
-@Service 
-@RequiredArgsConstructor 
+@Service
+@Validated
+@RequiredArgsConstructor
 public class VeiculoService {
 
     private final VeiculoRepository repository;
