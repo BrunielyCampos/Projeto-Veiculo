@@ -24,19 +24,12 @@ public class Veiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank 
+   
     private String placa;
-
-    @NotBlank 
+ 
     private String modelo;
-
-    @NonNull 
     private Integer anoFabricacao;
-
-    @NotBlank 
     private String tipo;
-
-    @NotBlank 
     private String nomePropietário;
 
 }

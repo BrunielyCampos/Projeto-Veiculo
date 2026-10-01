@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-VeiculoApplication<veiculo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.prova.veiculo.VeiculoApplication",
+            "projectName": "veiculo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
